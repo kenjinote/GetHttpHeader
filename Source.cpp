@@ -49,7 +49,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT msg, WPARAM wParam, LPARAM lParam)
 	case WM_CREATE:
 		hEdit1 = CreateWindowEx(WS_EX_CLIENTEDGE, L"EDIT", L"https://hack.jp/", WS_VISIBLE | WS_CHILD | WS_TABSTOP | ES_AUTOHSCROLL, 10, 10, 256, 32, hWnd, 0, ((LPCREATESTRUCT)lParam)->hInstance, 0);
 		hButton = CreateWindow(L"BUTTON", L"取得", WS_VISIBLE | WS_CHILD | WS_TABSTOP, 276, 10, 256, 32, hWnd, (HMENU)IDOK, ((LPCREATESTRUCT)lParam)->hInstance, 0);
-		hEdit2 = CreateWindowEx(WS_EX_CLIENTEDGE, L"EDIT", 0, WS_VISIBLE | WS_CHILD | WS_TABSTOP | ES_MULTILINE | ES_AUTOHSCROLL | ES_AUTOVSCROLL, 10, 50, 522, 256, hWnd, 0, ((LPCREATESTRUCT)lParam)->hInstance, 0);
+		hEdit2 = CreateWindowEx(WS_EX_CLIENTEDGE, L"EDIT", 0, WS_VISIBLE | WS_CHILD | WS_VSCROLL | WS_TABSTOP | ES_MULTILINE | ES_AUTOHSCROLL | ES_AUTOVSCROLL, 10, 50, 522, 256, hWnd, 0, ((LPCREATESTRUCT)lParam)->hInstance, 0);
 		break;
 	case WM_SIZE:
 		MoveWindow(hEdit1, 10, 10, LOWORD(lParam) - 30 - 256, 32, TRUE);
